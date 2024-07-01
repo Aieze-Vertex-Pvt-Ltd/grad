@@ -1,14 +1,19 @@
 
-const express=require("express");
+const express = require('express');
 const router=express.Router();
 
 
+console.log('bbbbbbbbb')
 
 router.get('/health', async (req, res) => {
     try {
-        return res.status(STATUS.OK).send("Auth Service is Healthy");
+        console.log('welcome')
+        return res.status(200).send("Auth Service is Healthy");  
     } catch (error) {
-        return res.status(STATUS.INTERNAL_SERVER_ERROR).send();
+        return res.status(500).send('err in catch');
     }
 });
+
+
+module.exports = router;
 
